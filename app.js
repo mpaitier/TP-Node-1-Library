@@ -16,6 +16,7 @@ db.initDb()
 
 // routes
 require('./src/routes/findAllBooks')(app)
+require('./src/routes/findBookByPk')(app)
 
 app.use(({res}) => {
     const message = 'Unable to find the ressource asked ! Try another url.'
