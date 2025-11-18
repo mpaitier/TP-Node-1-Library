@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "dab70841-f47c-459f-ac90-ff53504aaf80",
+		"name": "LIBRARY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50080022",
+		"_collection_link": "https://mpaitier44-5052503.postman.co/workspace/Mathias-Paitier's-Workspace~1cf22397-1834-4dc3-8b70-b1fcbd0021ae/collection/50080022-dab70841-f47c-459f-ac90-ff53504aaf80?action=share&source=collection_link&creator=50080022"
+	},
+	"item": [
+		{
+			"name": "Find all books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/books",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find book by primary key",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/books/6",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"One Piece - Tome 1 : Romance Dawn\",\r\n    \"author\": \"Eiichiro Oda\",\r\n    \"isbn\": \"978-1569319017\",\r\n    \"publicationYear\": 1997,\r\n    \"genre\": \"Adventure, Fantasy comedy, Science fiction\",\r\n    \"isAvailable\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/books",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/books/6",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update book",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"La Chanson Douce\",\r\n    \"author\": \"Leïla Slimani\",\r\n    \"isbn\": \"978-2070799988\",\r\n    \"publicationYear\": 2016,\r\n    \"genre\": \"Thriller Psychologique, Drame\",\r\n    \"isAvailable\": true\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/books/9",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
