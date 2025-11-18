@@ -23,6 +23,7 @@ require('./src/routes/updateBook')(app)
 // optionnal
 require('./src/routes/findBooksByAuthor')(app)
 require('./src/routes/findBooksByGenre')(app)
+require('./src/routes/findBooksByDate')(app)
 
 app.use(({res}) => {
     const message = 'Unable to find the ressource asked ! Try another url.'
