@@ -15,12 +15,14 @@ app
 db.initDb()
 
 // routes
+require('./src/routes/findBooksByAvailable')(app)
+
 require('./src/routes/findAllBooks')(app)
 require('./src/routes/findBookByPk')(app)
 require('./src/routes/createBook')(app)
 require('./src/routes/deleteBook')(app)
 require('./src/routes/updateBook')(app)
-// optionnal
+
 require('./src/routes/findBooksByAuthor')(app)
 require('./src/routes/findBooksByGenre')(app)
 require('./src/routes/findBooksByDate')(app)
