@@ -15,6 +15,8 @@ app
 db.initDb()
 
 // routes
+
+require('./src/routes/findBooksBySearch')(app)
 require('./src/routes/findBooksByAvailable')(app)
 
 require('./src/routes/findAllBooks')(app)
