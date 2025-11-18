@@ -12,7 +12,7 @@ const books = [
     author: "Jane Austen",
     isbn: "978-2070366883",
     publicationYear: 1813,
-    genre: "Roman Classique",
+    genre: "Roman",
     isAvailable: true
   },
   {
@@ -44,7 +44,7 @@ const books = [
     author: "Victor Hugo",
     isbn: "978-2070404097",
     publicationYear: 1862,
-    genre: "Roman Historique",
+    genre: "Roman",
     isAvailable: true
   },
   {
