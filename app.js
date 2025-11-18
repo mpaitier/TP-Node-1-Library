@@ -18,6 +18,7 @@ db.initDb()
 require('./src/routes/findAllBooks')(app)
 require('./src/routes/findBookByPk')(app)
 require('./src/routes/createBook')(app)
+require('./src/routes/deleteBook')(app)
 
 app.use(({res}) => {
     const message = 'Unable to find the ressource asked ! Try another url.'
