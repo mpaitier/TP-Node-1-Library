@@ -3,8 +3,10 @@ const { Book } = require('../db/sequelize');
 module.exports = (app) => {
     app.get('/api/books/:id', (req, res) => {
         const id = parseInt(req.params.id);
+
         Book.findByPk(id)
             .then(book => {
+                
                 if(book === null) {
                     const message = `The book hasn't been found. Please try another identifier.`;
                     return res.status(404).json({ message })

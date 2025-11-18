@@ -20,6 +20,8 @@ require('./src/routes/findBookByPk')(app)
 require('./src/routes/createBook')(app)
 require('./src/routes/deleteBook')(app)
 require('./src/routes/updateBook')(app)
+// optionnal
+require('./src/routes/findBooksByAuthor')(app)
 
 app.use(({res}) => {
     const message = 'Unable to find the ressource asked ! Try another url.'

@@ -33,7 +33,7 @@ const books = [
   },
   {
     title: "Le Nom de la Rose",
-    author: "Umberto Eco",
+    author: "Victor Hugo",
     isbn: "978-2253036833",
     publicationYear: 1980,
     genre: "Mystère Historique",
