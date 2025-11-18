@@ -14,6 +14,9 @@ app
 
 db.initDb()
 
+// routes
+require('./src/routes/findAllBooks')(app)
+
 app.use(({res}) => {
     const message = 'Unable to find the ressource asked ! Try another url.'
     res.status(404).json({message})
