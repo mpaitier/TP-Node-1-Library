@@ -4,12 +4,21 @@ module.exports = (app) => {
     app.post('/api/books', (req, res) => {
         Book.create(req.body)
             .then(book => {
-                const message = `Le livre ${book.title} a été créé avec succès.`
-                res.status(200).json({ message, data: book }) 
+                const message = `The book ${book.title} has been created.`
+                res.status(201).json({ message, data: book }) 
             })
             .catch(error => {
+                if (error.name === 'SequelizeValidationError') {
+                    const message = `Invalid book data. Please verify the information provided.`
+                    return res.status(400).json({ message, data: error.errors.map(e => e.message) })
+                }
                 
-                const message = `Le livre n'a pas pu être créé. Veuillez réessayer ultérieurement.`;
+                if (error.name === 'SequelizeUniqueConstraintError') {
+                    const message = `ISBN must be unique. A book with this ISBN already exists.`
+                    return res.status(409).json({ message, data: error.errors.map(e => e.message) })
+                }
+                
+                const message = `The book couldn't be created. Please try again later.`;
                 res.status(500).json({ message, data: error })
             })
     })

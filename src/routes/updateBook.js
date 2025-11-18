@@ -16,9 +16,19 @@ module.exports = (app) => {
                 const message = `The book ${book.title} has been modified.`
                 res.json({message, data: book})
             })
-            .catch(err => {
-                const message = `The book can't be retrieve. Please try later.`
-                res.status(500).json({message, data: err})
+            .catch(error => {
+                if (error.name === 'SequelizeValidationError') {
+                    const message = `Invalid book data. Please verify the information provided.`
+                    return res.status(400).json({ message, data: error.errors.map(e => e.message) })
+                }
+                
+                if (error.name === 'SequelizeUniqueConstraintError') {
+                    const message = `ISBN must be unique. A book with this ISBN already exists.`
+                    return res.status(409).json({ message, data: error.errors.map(e => e.message) })
+                }
+                
+                const message = `The book couldn't be created. Please try again later.`;
+                res.status(500).json({ message, data: error })
             })
     })
 }
