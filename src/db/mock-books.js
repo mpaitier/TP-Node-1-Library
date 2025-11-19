@@ -11,7 +11,7 @@ const books = [
     title: "Orgueil et Préjugés",
     author: "Jane Austen",
     isbn: "978-2070366883",
-    publicationYear: 1813,
+    publicationYear: 1883,
     genre: "Roman",
     isAvailable: true
   },
@@ -56,7 +56,7 @@ const books = [
     isAvailable: false
   },
   {
-    title: "Sapiens : Une brève histoire de l'humanité",
+    title: "Sapiens Une brève histoire de l'humanité",
     author: "Yuval Noah Harari",
     isbn: "978-2253160019",
     publicationYear: 2011,
