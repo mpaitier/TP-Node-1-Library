@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "dab70841-f47c-459f-ac90-ff53504aaf80",
 		"name": "LIBRARY",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "50080022",
 		"_collection_link": "https://mpaitier44-5052503.postman.co/workspace/Mathias-Paitier's-Workspace~1cf22397-1834-4dc3-8b70-b1fcbd0021ae/collection/50080022-dab70841-f47c-459f-ac90-ff53504aaf80?action=share&source=collection_link&creator=50080022"
 	},
@@ -12,16 +12,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "{{base_url}}/api/books",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"api",
-						"books"
-					]
-				}
+				"url": "{{base_url}}/api/books"
 			},
 			"response": []
 		},
@@ -30,17 +21,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "{{base_url}}/api/books/6",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"api",
-						"books",
-						"6"
-					]
-				}
+				"url": "{{base_url}}/api/books/6"
 			},
 			"response": []
 		},
@@ -51,23 +32,32 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"One Piece - Tome 1 : Romance Dawn\",\r\n    \"author\": \"Eiichiro Oda\",\r\n    \"isbn\": \"978-1569319017\",\r\n    \"publicationYear\": 1997,\r\n    \"genre\": \"Adventure, Fantasy comedy, Science fiction\",\r\n    \"isAvailable\": true\r\n}",
+					"raw": "{\r\n    \"title\": \"\",\r\n    \"author\": null,\r\n    \"isbn\": \"978-1569319017\",\r\n    \"publicationYear\": 1997,\r\n    \"genre\": \"Adventure, Fantasy comedy, Science fiction\",\r\n    \"isAvailable\": true\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "{{base_url}}/api/books",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"api",
-						"books"
-					]
-				}
+				"url": "{{base_url}}/api/books"
+			},
+			"response": []
+		},
+		{
+			"name": "Create book (duplicated ISBN)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Bonjour\",\r\n    \"author\": \"Au revoir\",\r\n    \"isbn\": \"978-2070799988\",\r\n    \"publicationYear\": 1997,\r\n    \"genre\": \"Adventure, Fantasy comedy, Science fiction\",\r\n    \"isAvailable\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/api/books"
 			},
 			"response": []
 		},
@@ -76,17 +66,7 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": {
-					"raw": "{{base_url}}/api/books/6",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"api",
-						"books",
-						"6"
-					]
-				}
+				"url": "{{base_url}}/api/books/6"
 			},
 			"response": []
 		},
@@ -104,15 +84,66 @@
 						}
 					}
 				},
+				"url": "{{base_url}}/api/books/9"
+			},
+			"response": []
+		},
+		{
+			"name": "Find book by author",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/api/books/author/Victor%20Hugo"
+			},
+			"response": []
+		},
+		{
+			"name": "Find book by genre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/api/books/genre/Roman"
+			},
+			"response": []
+		},
+		{
+			"name": "Find book by date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/api/books/date/1980"
+			},
+			"response": []
+		},
+		{
+			"name": "Find book by available",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/api/books/available/"
+			},
+			"response": []
+		},
+		{
+			"name": "Find book by search",
+			"request": {
+				"method": "GET",
+				"header": [],
 				"url": {
-					"raw": "{{base_url}}/api/books/9",
+					"raw": "{{base_url}}/api/books/search?q=roman",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
 						"books",
-						"9"
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "roman"
+						}
 					]
 				}
 			},
